@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if git commit -v --dry-run | grep 'no commit' > /dev/null 2>&1
+then
+  echo "Trying to commit non-committable code."
+  exit 1
+else
+  exit 0
+fi
